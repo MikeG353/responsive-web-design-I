@@ -1,3 +1,180 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* !!!RESET FOLLOWS!!! */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+/* !!!RESET ENDS!!! */
+/* Body element doesnt take up full page width */
+/* Setting bidy width to 90% and centering content */
+body {
+	max-width: 90%;
+	margin: 0 auto;
+}
+/* Experimenting a little with FLexbox following this article */
+/* https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
+
+/* Inserting this collapsed row between two flex items will make 
+ * the flex item that comes after it break to a new row */
+.hbreak { /* create horizontal line break in flex with no width needed */
+    flex-basis: 100%;
+    height: 0;
+}
+.vbreak { /* used to create a vertivle break in flex wrapped items */
+    flex-basis: 100%;
+    width: 0;
+}
+.hcontainer { /* generic container for flex items */
+    display: flex;
+    flex-wrap: wrap;
+}
+.vcontainer { /* column container for flex items */
+    display: flex;
+    flex-flow: column nowrap;
+}
+.hcontainer *, .vcontainer *{ /* sets all flex items to grow 1 giving equal importance */
+    flex-grow: 1;
+}
+.container { /* to be used where no breaks are needed */
+    display: flex;
+}
+
+.body div {
+	height: 25%;
+	font-size: 125%;
+    margin: 0 3% auto;
+}
+/* Navigation bar */
+nav {
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 2%;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav a:link, nav a:visited{
+    text-decoration: none;
+    color: gray;
+
+}
+/* Header includes "Innovation on demand", it's button, and the image */
+header {
+    height: 50%;
+    margin-bottom: 3%;
+    border-bottom: 1px solid black;
+}
+.header-img {
+    width: 50%;
+}
+button {
+    width: 12em;
+    background-color: white;
+    padding: .5% 3%;
+    border: 1px solid black;
+}
+.getStarted {
+    padding: 3% 15%;
+    width: 50%;
+    font-size: 400%;
+    text-align: center;
+    margin: 0;
+}
+/* features only needs flex to work, handled above */
+/* banner image width set */
+.middle-img {
+    width: 100%;
+}
+/* contact info  */
+.contact {
+    text-justify: left;
+}
+ /* copyright footer */
+footer {
+    margin: 3% 0;
+    text-align: center;
+}
+/* *{ 
+    border: 1px solid gray !important;
+} */
+/* **********MEDIA QUERIES FOLLOW************ */
+@media (max-width: 800px){
+    .header-img{
+        display: none;
+    }
+    nav {
+        flex-direction: column-reverse;
+    }
+        /* not able to get the links to form a single row again */
+    .body div{
+        width: 50%;
+        padding: 0%;
+        margin: 0;
+    }
+}
+@media (max-width: 500px){
+
+    section div {
+        flex-flow: column wrap;
+        width: 100%;
+    }
+}
 
